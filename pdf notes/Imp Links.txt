@@ -1,0 +1,14 @@
+// Bit manipulation
+
+Question 5 : A Good read of hacks using bits (you can check this out in your free time) :
+http://graphics.stanford.edu/~seander/bithacks.html
+
+
+// OOPS
+Question 5 : Read up about basics of exception handling from here :
+https://www.w3schools.com/java/java_try_catch.asp
+
+
+// Time Complexcity
+
+There is book name: "Cormen" (Best to learn time complexity)
