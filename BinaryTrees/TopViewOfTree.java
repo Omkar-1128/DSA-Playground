@@ -95,3 +95,70 @@ public class TopViewOfTree {
         TopView(newNode);
     }
 }
+
+
+// Bottom View of Binary Tree Code  (Solve on gfg)
+
+/*
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+*/
+
+// class Solution {
+//     static class info {
+//         Node node;
+//         int hd;
+        
+//         public info(Node node , int hd) {
+//             this.node = node;
+//             this.hd = hd;
+//         }
+//     }
+    
+//     public ArrayList<Integer> bottomView(Node root) {
+//         // code here
+//         ArrayList<Integer> ans = new ArrayList<>();
+        
+//         Queue<info> q = new LinkedList<>();
+        
+//         HashMap<Integer , Node> map = new HashMap<>();
+        
+//         int minIdx = 0;
+//         int maxIdx = 0;
+        
+//         q.add(new info(root , 0));
+//         map.put(0 , root);
+        
+//         while(!q.isEmpty()) {
+//             info currInfo = q.remove();
+//             map.put(currInfo.hd , currInfo.node);
+            
+//             minIdx = Math.min(minIdx , currInfo.hd);
+//             maxIdx = Math.max(maxIdx , currInfo.hd);
+        
+//             if(currInfo.node.left != null) {
+//                 q.add(new info(currInfo.node.left , currInfo.hd - 1));
+//             }
+            
+//             if(currInfo.node.right != null) {
+//                 q.add(new info(currInfo.node.right , currInfo.hd + 1));
+//             }
+         
+//         }
+        
+//         for (int i = minIdx ; i <= maxIdx ; i++) {
+//             ans.add(map.get(i).data);
+//         }
+        
+//         return ans;
+//     }
+// }
