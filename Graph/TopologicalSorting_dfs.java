@@ -1,7 +1,7 @@
 package Graph;
 import java.util.*;
 
-public class TopologicalSorting {
+public class TopologicalSorting_dfs {
 
     static class Edge {
         int src;
@@ -56,10 +56,10 @@ public class TopologicalSorting {
 
         graph[2].add(new Edge(2, 3));
         graph[3].add(new Edge(3, 1));
-        graph[4].add(new Edge(4, 1));
         graph[4].add(new Edge(4, 0));
-        graph[5].add(new Edge(5, 2));
+        graph[4].add(new Edge(4, 1));
         graph[5].add(new Edge(5, 0));
+        graph[5].add(new Edge(5, 2));
 
         System.out.print("Topological Sorting -> ");
         TopologicalSort(graph);
