@@ -34,7 +34,7 @@ public class PQ {
                 visited[curr.node] = true;
                 minCost += curr.dist;
 
-                for (int i = 0; i < cities[curr.node].length ; i++) {
+                for (int i = 0; i < cities[curr.node].length; i++) {
                     if (!visited[i] && cities[curr.node][i] != 0) {
                         pq.add(new Pair(i, cities[curr.node][i]));
                     }
@@ -56,8 +56,98 @@ public class PQ {
 
         mst(cities);
     }
-
 }
+
+// Important Problem // Alien Dictionary
+
+// We are given a list of words from an alien language that are already sorted according to the rules of that language. The alien language uses English letters, but the order of these letters is unknown. Our task is to determine the correct order of the characters in the alien language.
+
+// To find this order, we compare adjacent words and identify the first position where the characters differ. The character from the first word must appear before the character from the second word in the alien language. These relations form a directed graph, and topological sorting is used to find a valid character order.
+
+// If a longer word appears before its own prefix, or if a cycle exists in the character graph, no valid order is possible and an empty string is returned. Otherwise, any valid character order may be returned.
+
+// class Solution {
+
+//     public String findOrder(String[] words) {
+//         // code here
+
+//         HashMap<Character, Integer> Indegree = new HashMap<>(); // To store the indegree of each character(node)
+//         HashMap<Character, ArrayList<Character>> map = new HashMap<>(); // Graph of character in which each list element
+//                                                                         // is destination of edge
+
+//         for (int i = 0; i < words.length; i++) {
+//             for (int j = 0; j < words[i].length(); j++) {
+//                 char ch = words[i].charAt(j);
+//                 Indegree.putIfAbsent(ch, 0); // initializing all the character in the words array with indegree 0
+//             }
+//         }
+
+//         outer: for (int i = 0; i < words.length - 1; i++) {
+//             int n1 = words[i].length();
+//             int n2 = words[i + 1].length();
+
+//             int n = Math.min(n1, n2);
+
+//             for (int j = 0; j < n; j++) { // comparing two letters
+//                 char c1 = words[i].charAt(j);
+//                 char c2 = words[i + 1].charAt(j);
+
+//                 // If characters are not equal then add in graph(map) with edge c1 ---> c2
+//                 // c1 comes before c2
+//                 if (c1 != c2) {
+//                     map.computeIfAbsent(c1, k -> new ArrayList<>());
+//                     if (!map.get(c1).contains(c2)) {
+//                         map.get(c1).add(c2);
+//                         Indegree.put(c2, Indegree.get(c2) + 1); // Increase the indegree of c2
+//                     }
+//                     continue outer;
+//                 }
+//             }
+
+//             if (n1 > n2)
+//                 return ""; // Prefix condition (e.d "abc" , "abcd" -> invalid) No any unique character
+//         }
+
+//         // Topologocal Sorting // Kahn's Algotithm
+
+//         Queue<Character> q = new LinkedList<>();
+//         StringBuilder ans = new StringBuilder("");
+
+//         // Initializing queue with character of Zero indegree
+//         for (Character ch : Indegree.keySet()) {
+//             if (Indegree.get(ch) == 0) {
+//                 q.add(ch);
+//             }
+//         }
+
+//         while (!q.isEmpty()) {
+//             char curr = q.remove();
+//             ans.append(curr);
+
+//             // check all the neighbours of curr reduce the indegree of all the neighbour of
+//             // curr
+//             // then check their indegree becomes zero if zero then add in queue
+//             if (map.containsKey(curr)) {
+//                 for (int i = 0; i < map.get(curr).size(); i++) {
+//                     char des = map.get(curr).get(i);
+//                     Indegree.put(des, Indegree.get(des) - 1);
+
+//                     if (Indegree.get(des) == 0) {
+//                         q.add(des);
+//                     }
+//                 }
+//             }
+//         }
+
+//         // ans should contain all the letters of the dictonary words
+//         // Indegree contains all the letters
+//         if (ans.length() != Indegree.size()) {
+//             return "";
+//         }
+
+//         return ans.toString();
+//     }
+// }
 
 // leetcode
 // 787. Cheapest Flights Within K Stops
