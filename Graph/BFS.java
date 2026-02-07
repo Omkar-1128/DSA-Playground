@@ -38,7 +38,7 @@ public class BFS {
         //    /         |  \
         //  0           |    5 ---- 6
         //    \         |  /
-        //      1 ----- 3
+        //      2 ----- 4
 
         int V = 7;
         @SuppressWarnings("unchecked")

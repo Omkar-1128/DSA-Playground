@@ -146,7 +146,7 @@ public class AVLTrees {
                     temp = root.left;
                 // No child case
                 if (temp == null) {
-                    temp = root;
+                    // temp = root;
                     root = null;
                 } else // One child case
                     root = temp; // Copy the contents of

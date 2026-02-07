@@ -107,7 +107,7 @@ public class BitManipulation {
     public static void main(String[] args) {
         // System.out.println(5 & 6);
         // System.out.println(5 | 6);
-        // System.out.println(5 ^ 6);
+        System.out.println(5 ^ 6);
         // System.out.println(~5);
         // System.out.println(~0);
         // System.out.println(5<<2); // binary left shift (shortcut: if a << b then c = a * 2^b)  // 5 * 2^2 = 20;
@@ -138,8 +138,8 @@ public class BitManipulation {
         // char ch = (char) sc.next().charAt(0);
         // System.out.println("Small Letter: " + uppertolowerCase(ch));
 
-        for(char i = 'A' ; i <= 'Z' ; i++) {
-            System.out.print(uppertolowerCase(i) + " ");
-        }
+        // for(char i = 'A' ; i <= 'Z' ; i++) {
+        //     System.out.print(uppertolowerCase(i) + " ");
+        // }
     }
 }
