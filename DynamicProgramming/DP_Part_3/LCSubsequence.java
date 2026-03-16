@@ -9,7 +9,7 @@ package DynamicProgramming.DP_Part_3;
 // For example, "ace" is a subsequence of "abcde".
 // A common subsequence of two strings is a subsequence that is common to both strings.
 
-public class LCS {
+public class LCSubsequence {
 
     // Recursive Approch  // TC :- O(2^n)
 
