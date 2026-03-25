@@ -4,7 +4,7 @@ public class UnboundedKnapSack {
 
     // Tabulation Approch
 
-    public static int UnboundedKnapSack(int val[] , int wt[] , int W) {
+    public static int UnboundedKS(int val[] , int wt[] , int W) {
         int n = val.length;
 
         // Creating the Table
@@ -35,6 +35,6 @@ public class UnboundedKnapSack {
 
         int W = 7;
 
-        System.out.println(UnboundedKnapSack(val, wt, W));
+        System.out.println(UnboundedKS(val, wt, W));
     }
 }
