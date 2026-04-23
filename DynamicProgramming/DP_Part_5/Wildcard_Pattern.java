@@ -114,9 +114,20 @@ public class Wildcard_Pattern {
                 }
             }
         }
-
+        PrintTable(dp);
         return dp[n][m];
     } 
+
+    // Print Table
+    public static void PrintTable(Boolean dp[][]) {
+        for(int i = 0 ; i < dp.length ; i++) {
+            for(int j = 0 ; j < dp[0].length ; j++) {
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 
     public static void main(String[] args) {
         // String s = "abc";  // String of length n
@@ -125,8 +136,10 @@ public class Wildcard_Pattern {
         // String s = "aa";
         // String p = "*";
 
+        // String s = "baaabab";
+        // String p = "*****ba*****ab";
         String s = "baaabab";
-        String p = "*****ba*****ab";
+        String p = "a*ab";
 
         System.out.println("Recursion Solution:- " + checkWildCard(s, p, s.length(), p.length()));
 
